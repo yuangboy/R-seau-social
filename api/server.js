@@ -26,8 +26,8 @@ app.use(cors({
 }));
 
 
-app.get("/h",(req,res)=>{
-  res.send("Hello");
+app.get("/page",(req,res)=>{
+  res.send("Hello page");
 })
 app.use('/api/users/upload', express.static(path.join(__dirname, '../client/public/upload')));
 app.use("/api/users",UserRouter);
