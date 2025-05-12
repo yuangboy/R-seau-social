@@ -20,11 +20,15 @@ app.use(express.urlencoded({extended:true}));
 
 
 app.use(cors({
-  origin: 'http://localhost:5173', 
+  origin: '*', 
   methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],
   credentials: true
 }));
 
+
+app.get("/h",(req,res)=>{
+  res.send("Hello");
+})
 app.use('/api/users/upload', express.static(path.join(__dirname, '../client/public/upload')));
 app.use("/api/users",UserRouter);
 app.use("/api/post",routerPost);
