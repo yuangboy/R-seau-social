@@ -1,10 +1,14 @@
 import mongoose from "mongoose";
 
+// const DBConnect=async ()=>{
+
+// const db=await mongoose.connect(`${process.env.URL_MONGO_DB}/reseau-social`);
+// return db;
+// }
+
+
 const DBConnect=async ()=>{
-
-const db=await mongoose.connect(`${process.env.URL_MONGO_DB}/reseau-social`);
-return db;
+   mongoose.connect(process.env.URL_MONG0_DB_ATLAS);
 }
-
 
 export default DBConnect;
